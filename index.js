@@ -14,6 +14,7 @@ app.use(express.json());
 app.use('/',routers)
 
 // server will only run when the mongodb is connected
+
 mongodb().then(()=>{
     app.listen(port,()=>{
         console.log(`server is now running on ${port}`)

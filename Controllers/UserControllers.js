@@ -11,7 +11,7 @@ const UserObj = {
             return res.status(400).json({ error: "user not found" });
         }
         const isMatch = await bcrypt.compare(password,existingUser.password);
-        if(!isMatch){ṭ
+        if(!isMatch){
             return res.status(400).json({ error: "invalid Password" });
         }
         const token = Jwt.sign({id:existingUser._id},process.env.SECRET_KEY,{expiresIn:'1h'})
